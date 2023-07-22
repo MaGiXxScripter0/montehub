@@ -8,6 +8,8 @@ Original by Sirius
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
+Modified by MaGiXx
+
 ]]
 
 
@@ -1952,6 +1954,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 
             function InputSettings:Set(text)
                 Input.InputFrame.InputBox.Text = text
+				local Success, Response = pcall(function()
+					InputSettings.Callback(Input.InputFrame.InputBox.Text)
+				end)
             end
 
 			if Settings.ConfigurationSaving then
