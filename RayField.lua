@@ -8,7 +8,7 @@ Original by Sirius
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-Modified by MaGiXx 2
+Modified by MaGiXx 3
 
 ]]
 
@@ -2520,6 +2520,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					if table.find(DropdownSettings.CurrentOption, Option) then
 						table.remove(DropdownSettings.CurrentOption, table.find(DropdownSettings.CurrentOption, Option))
 						if DropdownSettings.MultipleOptions then
+							print(DropdownSettings, DropdownSettings.CurrentOption)
 							if #DropdownSettings.CurrentOption == 1 then
 								Dropdown.Selected.Text = DropdownSettings.CurrentOption[1]
 							elseif #DropdownSettings.CurrentOption == 0 then
