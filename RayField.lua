@@ -8,7 +8,7 @@ Original by Sirius
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-Modified by MaGiXx
+Modified by MaGiXx 2
 
 ]]
 
@@ -2482,7 +2482,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 				TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 			end)
 
-			function DropdownSettings:AddOption(Option, Selecteds)
+			function AddOption(Option, Selecteds)
 				local DropdownOption = Elements.Template.Dropdown.List.Template:Clone()
 				DropdownOption:GetPropertyChangedSignal('BackgroundTransparency'):Connect(function()
 					if DropdownOption.BackgroundTransparency == 1 then
@@ -2653,7 +2653,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 				local Success, Response = pcall(function()
 					DropdownSettings.Callback(Selecteds)
 				end)
-				
+
 				if not Success then
 					TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Dropdown.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
