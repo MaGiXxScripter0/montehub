@@ -4,7 +4,7 @@ local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder .. "/Configurations"
 local ConfigurationExtension = ".rfld"
 local RayFieldQuality = {}
--- 1
+
 local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
