@@ -4,7 +4,7 @@ local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder .. "/Configurations"
 local ConfigurationExtension = ".rfld"
 local RayFieldQuality = {}
-
+-- 1
 local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
@@ -3051,25 +3051,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 					SaveConfiguration()
 				end)
 			end
-			local function AddOptions(Options, Selected)
-				if typeof(Options) == 'table' then
-					for _, Option in ipairs(Options) do
-						AddOption(Option, Selected)
-					end
-				else
-					AddOption(Options, Selected)
-				end
-				if Settings.ConfigurationSaving then
-					if Settings.ConfigurationSaving.Enabled and DropdownSettings.Flag then
-						RayfieldLibrary.Flags[DropdownSettings.Flag] = DropdownSettings
-					end
-				end
-			end
-			function DropdownSettings:Add(Items, Selected)
-				AddOptions(Items, Selected)
-			end
-			
-			AddOptions(DropdownSettings.Options, DropdownSettings.CurrentOption)
 			
             --fix
 			function DropdownSettings:Set(NewOption)
@@ -3559,6 +3540,26 @@ function RayfieldLibrary:CreateWindow(Settings)
 					end
 				end
 			end
+
+			local function AddOptions(Options, Selected)
+				if typeof(Options) == 'table' then
+					for _, Option in ipairs(Options) do
+						AddOption(Option, Selected)
+					end
+				else
+					AddOption(Options, Selected)
+				end
+				if Settings.ConfigurationSaving then
+					if Settings.ConfigurationSaving.Enabled and DropdownSettings.Flag then
+						RayfieldLibrary.Flags[DropdownSettings.Flag] = DropdownSettings
+					end
+				end
+			end
+			function DropdownSettings:Add(Items, Selected)
+				AddOptions(Items, Selected)
+			end
+			
+			AddOptions(DropdownSettings.Options, DropdownSettings.CurrentOption)
 
 			function DropdownSettings:Refresh(NewOptions, Selecteds)
 				DropdownSettings.Items = {}
